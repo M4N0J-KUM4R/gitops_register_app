@@ -1,15 +1,15 @@
 pipeline {
-  agent {label "Jenkins_Agent"}
-  environment {
-            APP_NAME = "register_app_pipeline"
-  }
-  
-  stages {
-    stage("CleanUp WorkSpace") {
-       steps{
-         cleanWs()
-       }  
+    agent { label "Jenkins-Agent" }
+    environment {
+              APP_NAME = "register_app_pipeline"
     }
+
+    stages {
+        stage("Cleanup Workspace") {
+            steps {
+                cleanWs()
+            }
+        }
     stage("Checkout From SCM") {
        steps{
          git branch: 'main', credentialsId: 'Github', url: 'https://github.com/M4N0J-KUM4R/gitops_register_app'
