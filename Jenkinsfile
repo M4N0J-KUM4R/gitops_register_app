@@ -3,6 +3,7 @@ pipeline {
   environment {
             APP_NAME = "register_app_pipeline"
   }
+  
   stages {
     stage("CleanUp WorkSpace") {
        steps{
